@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import dayjs from "dayjs";
 
 export const Day = styled.div`
   background-color: ${(props) => props.theme.background.tertiary};
@@ -10,7 +11,8 @@ export const Day = styled.div`
 `;
 
 export const Text = styled.p`
-  color: black;
+  color: ${(props) => props.color};
+
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   text-align: center;

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./Month.styles";
+import dayjs from "dayjs";
 
 import Day from "../Day/Day";
 
@@ -10,7 +11,15 @@ const Month = ({ month }) => {
       {month.map((row, index) => (
         <React.Fragment key={index}>
           {row.map((day, idx) => (
-            <Day day={day.format("DD")} key={idx} />
+            <Day
+              day={day}
+              key={idx}
+              color={
+                day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
+                  ? "red"
+                  : "black"
+              }
+            />
           ))}
         </React.Fragment>
       ))}
