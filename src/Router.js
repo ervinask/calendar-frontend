@@ -11,10 +11,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Body>
-        <Navigation />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
           <Route exact path="/calendar" element={<Main />} />
         </Routes>
       </Body>
