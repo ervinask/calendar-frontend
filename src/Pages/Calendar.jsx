@@ -1,8 +1,9 @@
 import React from 'react';
 import { getMonth } from '../util';
+import Calendar from '../components/Calendar/Calendar';
 
-const Calendar = () => {
-  return <Calendar> </Calendar>;
+const Main = () => {
+  return <Calendar month={getMonth()} />;
 };
 
-export default Calendar;
+export default Main;

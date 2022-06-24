@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import * as S from "./Month.styles";
-import dayjs from "dayjs";
+import React from 'react';
+import PropTypes from 'prop-types';
+import * as S from './Month.styles';
+import dayjs from 'dayjs';
 
-import Day from "../Day/Day";
+import Day from '../Day/Day';
 
 const Month = ({ month }) => {
   return (
@@ -14,11 +14,7 @@ const Month = ({ month }) => {
             <Day
               day={day}
               key={idx}
-              color={
-                day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
-                  ? "red"
-                  : "black"
-              }
+              color={day.format('DD-MM-YY') === dayjs().format('DD-MM-YY') ? '#F05151' : 'black'}
             />
           ))}
         </React.Fragment>

@@ -1,11 +1,11 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
-import theme from "../../theme";
-import Calendar from "./Calendar";
-import { getMonth } from "../../util";
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import theme from '../../theme';
+import Calendar from './Calendar';
+import { getMonth } from '../../util';
 
 export default {
-  title: "Calendar/Calendar",
+  title: 'Calendar/Calendar',
   component: Calendar,
 };
 
