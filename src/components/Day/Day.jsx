@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import * as S from "./Day.styles";
 
 const Day = ({ day, children, color }) => {
-  function currentDay() {}
-
   return (
     <S.Day>
       <S.Text color={color}>{day.format("DD")}</S.Text>
@@ -13,6 +11,10 @@ const Day = ({ day, children, color }) => {
   );
 };
 
-Day.propTypes = {};
+Day.propTypes = {
+  color: PropTypes.func,
+  day: PropTypes.number.isRequired,
+  children: PropTypes.node,
+};
 
 export default Day;

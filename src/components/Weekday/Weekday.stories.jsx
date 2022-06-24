@@ -4,7 +4,7 @@ import theme from "../../theme";
 import Weekday from "./Weekday";
 
 export default {
-  title: "Weekday",
+  title: "Calendar/Weekday",
   component: Weekday,
 };
 

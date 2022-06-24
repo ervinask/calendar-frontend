@@ -5,7 +5,7 @@ import Calendar from "./Calendar";
 import { getMonth } from "../../util";
 
 export default {
-  title: "Calendar",
+  title: "Calendar/Calendar",
   component: Calendar,
 };
 

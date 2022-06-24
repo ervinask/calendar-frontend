@@ -5,7 +5,7 @@ import Day from "./Day";
 import dayjs from "dayjs";
 
 export default {
-  title: "Day",
+  title: "Calendar/Day",
   component: Day,
 };
 
