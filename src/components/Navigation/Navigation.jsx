@@ -11,10 +11,10 @@ const Navigation = ({ navWidth, handleClick }) => {
   return (
     <S.Navigation width={navWidth}>
       <NavigationSec background={(props) => props.theme.background.primary}>
-        <NavItem onClick={handleClick}>
+        <NavItem>
           <FontAwesomeIcon icon={faPlus} color="#c9cbd1" />
         </NavItem>
-        <NavItem onClick={handleClick}>
+        <NavItem>
           <FontAwesomeIcon icon={faCalendar} color="#c9cbd1" />
         </NavItem>
         <NavItem>

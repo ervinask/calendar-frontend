@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Month = styled.div`
   background-color: ${(props) => props.theme.background.tertiary};
-  height: calc(100vh - 2rem);
+  height: calc(100% - 2rem);
   width: 100%;
   display: flex;
   flex-wrap: wrap;

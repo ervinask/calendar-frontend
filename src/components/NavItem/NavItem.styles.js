@@ -5,8 +5,10 @@ export const NavItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 0;
+  height: 3rem;
+  font-size: 1.25rem;
+  cursor: pointer;
   &:hover {
-    box-shadow: 1px 0 red inset;
+    box-shadow: 0.125rem 0 #f05151 inset;
   }
 `;

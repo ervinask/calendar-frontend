@@ -1,20 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import WrapperContext from './Context/WrapperContext';
 
-import Home from './Pages/Home';
-import About from './Pages/About';
 import Main from './Pages/Calendar';
-import Navigation from './components/Navigation/Navigation';
-import { Body } from './components/Body/Body.styles';
-
 const Router = () => {
   return (
     <BrowserRouter>
-      <Body>
-        <Routes>
-          <Route exact path="/calendar" element={<Main />} />
-        </Routes>
-      </Body>
+      <Routes>
+        <Route exact path="/calendar" element={<Main />} />
+      </Routes>
     </BrowserRouter>
   );
 };

@@ -10,6 +10,6 @@ export default {
 
 export const primary = () => (
   <ThemeProvider theme={theme}>
-    <Weekdays height="7rem" />
+    <Weekdays />
   </ThemeProvider>
 );

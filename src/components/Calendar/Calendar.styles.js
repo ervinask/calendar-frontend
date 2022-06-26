@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
 export const Calendar = styled.div`
-  height: 100vh;
+  height: ${(props) => props.height};
   width: 100%;
 `;
