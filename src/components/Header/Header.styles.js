@@ -9,7 +9,7 @@ export const Header = styled.header`
   align-items: center;
   gap: 1rem;
   box-sizing: border-box;
-  border-bottom: 1px #dee0e7 solid;
+  border-bottom: 0.125rem #f05151 solid;
 `;
 
 export const Title = styled.h1`

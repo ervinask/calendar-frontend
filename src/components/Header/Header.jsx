@@ -9,9 +9,8 @@ const Header = ({ children, headerHeight, title }) => {
 
   const handlePrevMonth = () => setMonthIndex(monthIndex - 1);
 
-  function handleNextMonth() {
-    setMonthIndex(monthIndex + 1);
-  }
+  const handleNextMonth = () => setMonthIndex(monthIndex + 1);
+
   return (
     <S.Header height={headerHeight}>
       <S.Title>{dayjs(new Date(dayjs().year(), monthIndex)).format('MMMM YYYY')}</S.Title>
