@@ -19,11 +19,13 @@ const Main = () => {
 
   return (
     <Body>
-      <Navigation navWidth={navWidth} />
-      <div style={{ width: `calc(100% - ${navWidth})` }}>
-        <Header headerHeight={headerHeight}></Header>
-        <Calendar month={currentMonth} calendarHeight={`calc(100vh - ${headerHeight})`} />
-      </div>
+      <Header headerHeight={headerHeight}></Header>
+      <Navigation navWidth={navWidth} navHeight={`calc(100vh - ${headerHeight})`} />
+      <Calendar
+        month={currentMonth}
+        calendarHeight={`calc(100vh - ${headerHeight})`}
+        calendarWidth={`calc(100% - ${navWidth})`}
+      />
     </Body>
   );
 };

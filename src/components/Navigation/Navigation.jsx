@@ -7,9 +7,9 @@ import { NavItem } from '../NavItem/NavItem.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faCalendar, faPlus, faGear, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
-const Navigation = ({ navWidth, handleClick }) => {
+const Navigation = ({ navWidth, navHeight }) => {
   return (
-    <S.Navigation width={navWidth}>
+    <S.Navigation width={navWidth} height={navHeight}>
       <NavigationSec background={(props) => props.theme.background.primary}>
         <NavItem>
           <FontAwesomeIcon icon={faPlus} color="#c9cbd1" />
