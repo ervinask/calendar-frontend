@@ -1,4 +1,5 @@
-import dayjs from "dayjs";
+import dayjs from 'dayjs';
+import { func } from 'prop-types';
 
 export function getMonth(month = dayjs().month()) {
   const year = dayjs().year();
@@ -13,4 +14,24 @@ export function getMonth(month = dayjs().month()) {
   });
 
   return daysMatrix;
+}
+
+export function getWeek() {
+  let weekFirstDay = -1;
+  return Array(7)
+    .fill(null)
+    .map(() => {
+      weekFirstDay++;
+      return dayjs().day(weekFirstDay);
+    });
+}
+
+export function getDay() {
+  let dayFirstHour = -1;
+  return Array(24)
+    .fill(null)
+    .map(() => {
+      dayFirstHour++;
+      return dayjs().hour(dayFirstHour);
+    });
 }
