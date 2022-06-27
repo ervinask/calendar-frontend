@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
+import CreateEventForm from '../components/TextInput/CreateEventForm';
 
 const About = () => {
-  return <div>About</div>;
+  return <CreateEventForm />;
 };
 
 export default About;
