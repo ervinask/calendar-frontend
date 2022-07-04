@@ -5,8 +5,8 @@ export const Button = styled.button`
   border-radius: 0.5rem;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
-  padding: 0.5rem 1rem;
-  width: 8rem;
+  padding: 0.8rem;
+  width: 100%;
   color: #fff;
   background: #f05151;
 `;

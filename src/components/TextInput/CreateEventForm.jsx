@@ -9,11 +9,26 @@ import { useState } from 'react';
 const CreateEventForm = ({}) => {
   const [eventValues, updateEventValues] = useState();
 
+  const sendEventInfo = async () => {
+    try {
+      const res = await fetch(`http://localhost:8080/v1/events/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(eventValues),
+      });
+      const data = await res.json();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <S.CreateEventForm
       onSubmit={(e) => {
         e.preventDefault();
-        console.log(new Date());
+        sendEventInfo();
       }}
     >
       <S.Con>
@@ -60,7 +75,7 @@ const CreateEventForm = ({}) => {
         <S.DescInput
           type="date"
           id="date"
-          onChange={(e) => updateEventValues({ ...eventValues, desc: e.target.value })}
+          onChange={(e) => updateEventValues({ ...eventValues, description: e.target.value })}
         />
       </S.Con>
       <Button type="submit">Save</Button>

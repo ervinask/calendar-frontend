@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { getMonth, postas } from '../util';
+import { getMonth } from '../util';
 import Calendar from '../components/Calendar/Calendar';
 import Navigation from '../components/Navigation/Navigation';
 import Header from '../components/Header/Header';
@@ -9,6 +9,8 @@ import GlobalContext from '../Context/GlobalContext';
 const Main = () => {
   const [currentMonth, setCurrentMonth] = useState(getMonth());
   const { monthIndex } = useContext(GlobalContext);
+  const { error } = useContext(GlobalContext);
+  console.log(error);
 
   useEffect(() => {
     setCurrentMonth(getMonth(monthIndex));

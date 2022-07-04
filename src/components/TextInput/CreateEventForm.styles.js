@@ -8,6 +8,8 @@ export const CreateEventForm = styled.form`
   padding: 2rem;
   border: 1px solid black;
   margin: 2rem auto;
+  position: absolute;
+  background-color: white;
 `;
 
 export const TitleInput = styled.input`
