@@ -9,8 +9,6 @@ import GlobalContext from '../Context/GlobalContext';
 const Main = () => {
   const [currentMonth, setCurrentMonth] = useState(getMonth());
   const { monthIndex } = useContext(GlobalContext);
-  const { error } = useContext(GlobalContext);
-  console.log(error);
 
   useEffect(() => {
     setCurrentMonth(getMonth(monthIndex));
