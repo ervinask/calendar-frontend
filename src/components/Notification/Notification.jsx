@@ -13,6 +13,8 @@ const Notification = ({ children }) => {
   );
 };
 
-Notification.propTypes = {};
+Notification.propTypes = {
+  children: PropTypes.string,
+};
 
 export default Notification;

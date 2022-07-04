@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './CreateEventForm.styles';
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPen, faAlignJustify, faCalendar } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
 
 const CreateEventForm = ({}) => {
   const [eventValues, updateEventValues] = useState();

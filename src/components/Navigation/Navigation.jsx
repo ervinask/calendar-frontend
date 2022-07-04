@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Navigation.styles';
-import { NavigationSec } from '../NavigationSec/NavigationSec.styles';
-import { NavItem } from '../NavItem/NavItem.styles';
-
+import NavigationSec from '../NavigationSec/NavigationSec';
+import NavItem from '../NavItem/NavItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faCalendar, faPlus, faGear, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
@@ -33,6 +32,6 @@ const Navigation = ({ navWidth, navHeight }) => {
   );
 };
 
-Navigation.propTypes = {};
+Navigation.propTypes = { navWidth: PropTypes.string.isRequired, navHeight: PropTypes.string.isRequired };
 
 export default Navigation;

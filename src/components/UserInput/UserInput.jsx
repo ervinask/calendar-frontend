@@ -3,7 +3,7 @@ import * as S from './UserInput.styles';
 
 import PropTypes from 'prop-types';
 
-const UserInput = ({ handleChange, type, placeholder, value, icon, label }) => {
+const UserInput = ({ handleChange, type, placeholder, label }) => {
   return (
     <S.InputCon>
       <S.Label>{label}</S.Label>

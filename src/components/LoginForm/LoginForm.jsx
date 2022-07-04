@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './LoginForm.styles';
+import { Link } from 'react-router-dom';
+import GlobalContext from '../../Context/GlobalContext';
 import Button from '../Button/Button';
 import Notification from '../Notification/Notification';
 import UserInput from '../UserInput/UserInput';
-import { Link } from 'react-router-dom';
-import GlobalContext from '../../Context/GlobalContext';
 
 const LoginForm = ({ handleSubmit, title }) => {
   const [loginValues, updateLoginValues] = useState();
@@ -46,7 +46,8 @@ const LoginForm = ({ handleSubmit, title }) => {
 };
 
 LoginForm.propTypes = {
-  handleSubmit: PropTypes.func,
+  handleSubmit: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default LoginForm;

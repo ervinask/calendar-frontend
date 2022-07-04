@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './RegisterForm.styles';
+import { Link } from 'react-router-dom';
+import GlobalContext from '../../Context/GlobalContext';
 import Button from '../Button/Button';
 import UserInput from '../UserInput/UserInput';
-import { Link } from 'react-router-dom';
 import Notification from '../Notification/Notification';
-import GlobalContext from '../../Context/GlobalContext';
 
 const RegisterForm = ({ handleSubmit, title }) => {
   const [registerValues, updateRegisterValues] = useState();
@@ -56,6 +56,7 @@ const RegisterForm = ({ handleSubmit, title }) => {
 
 RegisterForm.propTypes = {
   handleSubmit: PropTypes.func,
+  title: PropTypes.string,
 };
 
 export default RegisterForm;

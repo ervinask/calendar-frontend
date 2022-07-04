@@ -1,10 +1,10 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
-import theme from "../../theme";
-import Button from "./Button";
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import theme from '../../theme';
+import Button from './Button';
 
 export default {
-  title: "Button",
+  title: 'Button',
   component: Button,
 };
 

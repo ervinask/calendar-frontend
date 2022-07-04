@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { getMonth } from '../util';
+import { useNavigate } from 'react-router-dom';
 import Calendar from '../components/Calendar/Calendar';
 import Navigation from '../components/Navigation/Navigation';
 import Header from '../components/Header/Header';
@@ -9,10 +10,16 @@ import GlobalContext from '../Context/GlobalContext';
 const Main = () => {
   const [currentMonth, setCurrentMonth] = useState(getMonth());
   const { monthIndex } = useContext(GlobalContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setCurrentMonth(getMonth(monthIndex));
   }, [monthIndex]);
+
+  const token = localStorage.getItem('token');
+  if (!token) {
+    return navigate('/');
+  }
 
   let navWidth = '4rem';
   let headerHeight = '6rem';

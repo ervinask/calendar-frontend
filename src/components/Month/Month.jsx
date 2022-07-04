@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Month.styles';
 import dayjs from 'dayjs';
-
 import Day from '../Day/Day';
 
 const Month = ({ month }) => {

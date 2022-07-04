@@ -6,6 +6,6 @@ const Body = ({ children }) => {
   return <S.Body>{children}</S.Body>;
 };
 
-Body.propTypes = {};
+Body.propTypes = { children: PropTypes.node.isRequired };
 
 export default Body;

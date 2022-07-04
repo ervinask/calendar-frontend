@@ -1,11 +1,11 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
-import theme from "../../theme";
-import Day from "./Day";
-import dayjs from "dayjs";
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import theme from '../../theme';
+import dayjs from 'dayjs';
+import Day from './Day';
 
 export default {
-  title: "Calendar/Day",
+  title: 'Calendar/Day',
   component: Day,
 };
 

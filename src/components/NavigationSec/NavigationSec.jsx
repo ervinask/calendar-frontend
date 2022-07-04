@@ -6,6 +6,8 @@ const NavigationSec = ({ children, background }) => {
   return <S.NavigationSec background={background}>{children}</S.NavigationSec>;
 };
 
-NavigationSec.propTypes = {};
+NavigationSec.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default NavigationSec;

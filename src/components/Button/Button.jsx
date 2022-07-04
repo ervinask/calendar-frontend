@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import * as S from "./Button.styles";
+import React from 'react';
+import PropTypes from 'prop-types';
+import * as S from './Button.styles';
 
 const Button = ({ type, children, handleClick }) => {
   return (
@@ -11,13 +11,13 @@ const Button = ({ type, children, handleClick }) => {
 };
 
 Button.propTypes = {
-  type: PropTypes.oneOf(["submit", "reset", "button"]),
+  type: PropTypes.oneOf(['submit', 'reset', 'button']),
   children: PropTypes.string.isRequired,
   handleClick: PropTypes.func,
 };
 
 Button.defaultProps = {
-  type: "button",
+  type: 'button',
 };
 
 export default Button;

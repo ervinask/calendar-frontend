@@ -20,6 +20,10 @@ const Calendar = ({ month, calendarHeight, calendarWidth }) => {
   );
 };
 
-Calendar.propTypes = {};
+Calendar.propTypes = {
+  month: PropTypes.string.isRequired,
+  calendarHeight: PropTypes.string.isRequired,
+  calendarWidth: PropTypes.string.isRequired,
+};
 
 export default Calendar;

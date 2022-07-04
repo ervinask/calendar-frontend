@@ -1,12 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Weekday = styled.p`
   background-color: ${(props) => props.theme.background.tertiary};
-  width: calc(100% / 7);
-  height: 2rem;
-  margin: 0;
-
   box-sizing: border-box;
-  text-align: center;
+  height: 2rem;
   line-height: 2rem;
+  margin: 0;
+  text-align: center;
+  width: calc(100% / 7);
 `;

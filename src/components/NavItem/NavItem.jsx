@@ -6,6 +6,8 @@ const NavItem = ({ children }) => {
   return <S.NavItem>{children}</S.NavItem>;
 };
 
-NavItem.propTypes = {};
+NavItem.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default NavItem;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from '../../theme';
-import { NavItem } from '../NavItem/NavItem.styles';
+import NavItem from '../NavItem/NavItem';
 import NavigationSec from './NavigationSec';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

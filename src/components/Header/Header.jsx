@@ -4,7 +4,7 @@ import * as S from './Header.styles';
 import GlobalContext from '../../Context/GlobalContext';
 import dayjs from 'dayjs';
 
-const Header = ({ children, headerHeight, title }) => {
+const Header = ({ headerHeight }) => {
   const { monthIndex, setMonthIndex } = useContext(GlobalContext);
 
   const handlePrevMonth = () => setMonthIndex(monthIndex - 1);
@@ -21,7 +21,7 @@ const Header = ({ children, headerHeight, title }) => {
 };
 
 Header.propTypes = {
-  children: PropTypes.string.isRequired,
+  headerHeight: PropTypes.string.isRequired,
 };
 
 export default Header;
