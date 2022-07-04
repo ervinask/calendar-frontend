@@ -18,7 +18,7 @@ const Main = () => {
 
   const token = localStorage.getItem('token');
   if (!token) {
-    return navigate('/');
+    return navigate('/login');
   }
 
   let navWidth = '4rem';

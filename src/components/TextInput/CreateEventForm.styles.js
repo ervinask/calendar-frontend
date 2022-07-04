@@ -10,6 +10,7 @@ export const CreateEventForm = styled.form`
   margin: 2rem auto;
   position: absolute;
   background-color: white;
+  left: 4rem;
 `;
 
 export const TitleInput = styled.input`
