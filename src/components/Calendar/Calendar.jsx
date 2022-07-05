@@ -15,13 +15,12 @@ const Calendar = ({ month, calendarHeight, calendarWidth }) => {
           <Weekday day={name} />
         ))}
       </Weekdays>
-      <Month month={month} />
+      <Month month={month} events={''} />
     </S.Calendar>
   );
 };
 
 Calendar.propTypes = {
-  month: PropTypes.string.isRequired,
   calendarHeight: PropTypes.string.isRequired,
   calendarWidth: PropTypes.string.isRequired,
 };

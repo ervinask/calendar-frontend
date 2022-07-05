@@ -7,6 +7,10 @@ const GlobalContext = React.createContext({
   setRegisterError: (error) => {},
   loginError: '',
   setLoginError: (error) => {},
+  event: '',
+  setEvent: () => {},
+  getEvent: [],
+  setGetEvent: () => {},
 });
 
 export default GlobalContext;

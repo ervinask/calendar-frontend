@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  border: none;
+  background: #f05151;
   border-radius: 0.5rem;
+  border: none;
+  color: #fff;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
   padding: 0.8rem;
   width: 100%;
-  color: #fff;
-  background: #f05151;
 `;

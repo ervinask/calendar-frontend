@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './CreateEventForm.styles';
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPen, faAlignJustify, faCalendar } from '@fortawesome/free-solid-svg-icons';
+import GlobalContext from '../../Context/GlobalContext';
 
 const CreateEventForm = ({}) => {
   const [eventValues, updateEventValues] = useState();
+  const { event, setEvent, getEvent, setGetEvent } = useContext(GlobalContext);
 
   const sendEventInfo = async () => {
     try {
@@ -14,10 +16,12 @@ const CreateEventForm = ({}) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          authorization: `Bearer ${localStorage.getItem('token')}`,
         },
         body: JSON.stringify(eventValues),
       });
       const data = await res.json();
+      console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -28,6 +32,9 @@ const CreateEventForm = ({}) => {
       onSubmit={(e) => {
         e.preventDefault();
         sendEventInfo();
+        setEvent(false);
+        setGetEvent([...getEvent, eventValues]);
+        console.log(getEvent);
       }}
     >
       <S.Con>

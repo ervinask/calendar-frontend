@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './NavItem.styles';
 
-const NavItem = ({ children }) => {
-  return <S.NavItem>{children}</S.NavItem>;
+const NavItem = ({ handleClick, handleBlur, icon }) => {
+  return (
+    <S.NavItem onClick={handleClick}>
+      <S.Icon icon={icon} />
+    </S.NavItem>
+  );
 };
 
-NavItem.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+NavItem.propTypes = {};
 
 export default NavItem;

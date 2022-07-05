@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 export const RegisterForm = styled.form`
-  padding: 2.5rem 2.25rem;
+  align-content: center;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
   gap: 2rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 100%;
-  border-radius: 2rem;
+  justify-content: center;
   margin: auto;
+  padding: 2.5rem 2.25rem;
+  width: 100%;
 `;
 
 export const FormTitle = styled.h2`
@@ -19,9 +19,9 @@ export const FormTitle = styled.h2`
 `;
 
 export const Login = styled.div`
-  text-align: end;
-  width: 100%;
-  margin: 0;
-  text-decoration: none;
   color: red;
+  margin: 0;
+  text-align: end;
+  text-decoration: none;
+  width: 100%;
 `;

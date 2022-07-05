@@ -7,6 +7,7 @@ export const Day = styled.div`
   box-sizing: border-box;
   margin: 0;
   width: calc(100% / 7);
+  height: calc(100% / 5);
 `;
 
 export const Text = styled.p`
@@ -14,4 +15,5 @@ export const Text = styled.p`
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-align: center;
+  margin: 0;
 `;
