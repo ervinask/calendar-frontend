@@ -45,16 +45,12 @@ const Month = ({ month }) => {
               key={idx}
               color={day.format('DD-MM-YY') === dayjs().format('DD-MM-YY') ? '#F05151' : 'black'}
             >
-              <div
-                onClick={() => {
-                  console.log(idx);
-                }}
-              >
-                {getEvent &&
-                  getEvent.map((item, idx) =>
-                    item.date === day.format('YYYY-MM-DD') ? <Event key={idx}>{item.title}</Event> : ''
-                  )}
-              </div>
+              {getEvent &&
+                getEvent.map((item, idx) => (
+                  <div onClick={() => console.log(selectedEvent(item.id))}>
+                    {item.date === day.format('YYYY-MM-DD') ? <Event key={idx}>{item.title}</Event> : ''}
+                  </div>
+                ))}
             </Day>
           ))}
         </React.Fragment>
