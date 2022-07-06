@@ -6,7 +6,7 @@ export const CalendarHeader = styled.header`
   box-sizing: border-box;
   display: flex;
   gap: 1rem;
-  height: ${(props) => props.height};
+  height: 6rem;
   margin: 0;
   padding: 0 2rem;
   width: 100%;

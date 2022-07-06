@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Header.styles';
 
-const Header = ({ headerHeight, title }) => {
+const Header = ({ title }) => {
   return (
-    <S.Header height={headerHeight}>
+    <S.Header>
       <S.Title>{title}</S.Title>
     </S.Header>
   );

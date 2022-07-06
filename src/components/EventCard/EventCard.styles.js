@@ -8,6 +8,10 @@ export const EventCard = styled.div`
   padding: 2rem 2rem 1.5rem;
   box-sizing: border-box;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.h2`

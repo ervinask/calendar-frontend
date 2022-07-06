@@ -7,7 +7,7 @@ import Event from '../Event/Event';
 import GlobalContext from '../../Context/GlobalContext';
 
 const Month = ({ month }) => {
-  const { getEvent, setGetEvent, eventModal, setEventModal, setCurrentEventData, currentEventData } =
+  const { getEvent, setGetEvent, eventModal, setEventModal, setCurrentEventData, currentEventData, monthIndex } =
     useContext(GlobalContext);
 
   const getEvents = async () => {
@@ -33,7 +33,6 @@ const Month = ({ month }) => {
   const selectedEvent = (day) => {
     return setCurrentEventData(...getEvent.filter((item) => item.id === day));
   };
-
   return (
     <S.Month>
       {month.map((row, index) => (
@@ -42,7 +41,13 @@ const Month = ({ month }) => {
             <Day
               day={day}
               key={idx}
-              color={day.format('DD-MM-YY') === dayjs().format('DD-MM-YY') ? '#F05151' : 'black'}
+              color={
+                day.format('DD-MM-YY') === dayjs().format('DD-MM-YY')
+                  ? 'red'
+                  : monthIndex + 1 === Number(day.format('M'))
+                  ? 'black'
+                  : 'grey'
+              }
             >
               {getEvent &&
                 getEvent.map(
@@ -55,7 +60,6 @@ const Month = ({ month }) => {
                           getEvents();
                           setEventModal(!eventModal);
                           selectedEvent(item.id);
-                          console.log(item.id);
                         }}
                       >
                         <Event key={idx}>{item.title}</Event>

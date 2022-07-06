@@ -9,7 +9,7 @@ import CreateEventForm from '../TextInput/CreateEventForm';
 
 import { faList, faCalendar, faPlus, faGear, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
-const Navigation = ({ navWidth, navHeight }) => {
+const Navigation = ({}) => {
   const navigate = useNavigate();
   const { event, setEvent, createEventModal } = useContext(GlobalContext);
 
@@ -32,12 +32,12 @@ const Navigation = ({ navWidth, navHeight }) => {
   };
 
   const settings = () => {
-    setEvent(!event);
+    setEvent(false);
     return navigate('/settings');
   };
 
   return (
-    <S.Navigation width={navWidth} height={navHeight}>
+    <S.Navigation>
       <NavigationSec background={(props) => props.theme.background.primary}>
         {createEventModal && <NavItem icon={faPlus} handleClick={() => createEvent()} />}
         <NavItem icon={faCalendar} handleClick={() => calendar()} />
@@ -52,9 +52,6 @@ const Navigation = ({ navWidth, navHeight }) => {
   );
 };
 
-Navigation.propTypes = {
-  navWidth: PropTypes.string.isRequired,
-  navHeight: PropTypes.string.isRequired,
-};
+Navigation.propTypes = {};
 
 export default Navigation;

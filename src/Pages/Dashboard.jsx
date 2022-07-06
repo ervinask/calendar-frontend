@@ -13,9 +13,6 @@ const DashBoard = () => {
   const navigate = useNavigate();
   const { getEvent, setGetEvent, setCreateEventModal, setEventModal } = useContext(GlobalContext);
 
-  let navWidth = '4rem';
-  let headerHeight = '6rem';
-
   const getEvents = async () => {
     try {
       const res = await fetch('http://localhost:8080/v1/events/', {
@@ -26,7 +23,6 @@ const DashBoard = () => {
         },
       });
       const data = await res.json();
-      console.log(data);
       return setGetEvent(data);
     } catch (err) {
       console.log(err);
@@ -85,8 +81,8 @@ const DashBoard = () => {
 
   return (
     <Body>
-      <Header headerHeight={headerHeight} title={'Dashboard'}></Header>
-      <Navigation navWidth={navWidth} navHeight={`calc(100vh - ${headerHeight})`} />
+      <Header title={'Dashboard'}></Header>
+      <Navigation />
       <SearchCon>
         <SearchBar
           handleChange={(input) => {

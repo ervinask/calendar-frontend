@@ -22,21 +22,14 @@ const Main = () => {
     return navigate('/login');
   }
 
-  let navWidth = '4rem';
-  let headerHeight = '6rem';
-
   setCreateEventModal(true);
 
   return (
     <Body>
-      <CalendarHeader headerHeight={headerHeight}></CalendarHeader>
-      <Navigation navWidth={navWidth} navHeight={`calc(100vh - ${headerHeight})`} />
+      <CalendarHeader />
+      <Navigation />
 
-      <Calendar
-        month={currentMonth}
-        calendarHeight={`calc(100vh - ${headerHeight})`}
-        calendarWidth={`calc(100% - ${navWidth})`}
-      />
+      <Calendar month={currentMonth} />
       {eventModal && (
         <EventModal
           title={currentEventData.title}

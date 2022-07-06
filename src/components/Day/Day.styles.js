@@ -7,7 +7,7 @@ export const Day = styled.div`
   box-sizing: border-box;
   margin: 0;
   width: calc(100% / 7);
-  height: calc(100% / 5);
+  height: calc(100% / 6);
 `;
 
 export const Text = styled.p`

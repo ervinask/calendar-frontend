@@ -5,6 +5,7 @@ export const Modal = styled.section`
   width: 100%;
   height: 100vh;
   position: absolute;
+  z-index: 101;
 `;
 
 export const EventModal = styled.article`
