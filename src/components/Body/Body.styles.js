@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Body = styled.body`
+export const Body = styled.article`
   display: flex;
   flex-wrap: wrap;
   height: 100vh;

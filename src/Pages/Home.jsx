@@ -1,38 +1,17 @@
 import React, { useEffect } from 'react';
 import { useContext } from 'react';
 import GlobalContext from '../Context/GlobalContext';
+import dayjs from 'dayjs';
+import { useState } from 'react';
 
 const Home = () => {
-  const { event, getEvent, setGetEvent } = useContext(GlobalContext);
+  const lopas = () => console.log(dayjs().format('MMMM DD HH:mm:ss'));
 
-  useEffect(() => {
-    getUserRecords();
-    console.log('ate');
-  }, [event]);
+  setInterval(lopas(), 1);
 
-  const getUserRecords = async () => {
-    try {
-      const res = await fetch('http://localhost:8080/v1/events/', {
-        method: 'GET',
-        headers: {
-          'Content-type': 'application/json',
-          Authorization: 'Bearer ' + localStorage.getItem('token'),
-        },
-      });
-      const data = await res.json();
-      return setGetEvent(data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const [time, setTime] = useState(dayjs().format('MMMM DD HH:mm:ss'));
 
-  return (
-    <div>
-      {getEvent.map((item) => (
-        <p>{item.id}</p>
-      ))}
-    </div>
-  );
+  return <div>Labas</div>;
 };
 
 export default Home;

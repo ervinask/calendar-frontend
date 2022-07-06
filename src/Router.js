@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './Pages/Calendar';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
-import Home from './Pages/Home';
+import Dashboard from './Pages/Dashboard';
 
 const Router = () => {
   return (
@@ -13,7 +13,7 @@ const Router = () => {
         <Route exact path="/calendar" element={<Main />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
-        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

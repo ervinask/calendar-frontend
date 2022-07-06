@@ -18,6 +18,14 @@ const Navigation = ({ navWidth, navHeight }) => {
     return navigate('/login');
   };
 
+  const calendar = () => {
+    return navigate('/calendar');
+  };
+
+  const dashboard = () => {
+    return navigate('/dashboard');
+  };
+
   const createEvent = () => {
     setEvent(!event);
   };
@@ -26,8 +34,8 @@ const Navigation = ({ navWidth, navHeight }) => {
     <S.Navigation width={navWidth} height={navHeight}>
       <NavigationSec background={(props) => props.theme.background.primary}>
         <NavItem icon={faPlus} handleClick={() => createEvent()} />
-        <NavItem icon={faCalendar} />
-        <NavItem icon={faList} />
+        <NavItem icon={faCalendar} handleClick={() => calendar()} />
+        <NavItem icon={faList} handleClick={() => dashboard()} />
       </NavigationSec>
       <NavigationSec background={(props) => props.theme.background.quarterly}>
         <NavItem icon={faGear} />

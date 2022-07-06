@@ -7,7 +7,6 @@ export const CreateEventForm = styled.form`
   gap: 1rem;
   width: 19rem;
   padding: 4rem 2rem 2rem;
-  border: 1px solid black;
   margin: 2rem auto;
   position: absolute;
   background-color: white;
