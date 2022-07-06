@@ -7,9 +7,10 @@ import Event from '../Event/Event';
 import GlobalContext from '../../Context/GlobalContext';
 
 const Month = ({ month }) => {
-  const { getEvent, setGetEvent } = useContext(GlobalContext);
+  const { getEvent, setGetEvent, eventModal, setEventModal, setCurrentEventData, currentEventData } =
+    useContext(GlobalContext);
 
-  const getUserRecords = async () => {
+  const getEvents = async () => {
     try {
       const res = await fetch('http://localhost:8080/v1/events/', {
         method: 'GET',
@@ -27,11 +28,11 @@ const Month = ({ month }) => {
   };
 
   useEffect(() => {
-    getUserRecords();
+    getEvents();
   }, []);
 
   const selectedEvent = (day) => {
-    return getEvent.filter((item) => item.id === day);
+    return setCurrentEventData(...getEvent.filter((item) => item.id === day));
   };
 
   console.log(getEvent);
@@ -46,11 +47,23 @@ const Month = ({ month }) => {
               color={day.format('DD-MM-YY') === dayjs().format('DD-MM-YY') ? '#F05151' : 'black'}
             >
               {getEvent &&
-                getEvent.map((item, idx) => (
-                  <div onClick={() => console.log(selectedEvent(item.id))}>
-                    {item.date === day.format('YYYY-MM-DD') ? <Event key={idx}>{item.title}</Event> : ''}
-                  </div>
-                ))}
+                getEvent.map(
+                  (item, idx) =>
+                    item.date === day.format('YYYY-MM-DD') && (
+                      <div
+                        tabIndex="1"
+                        key={idx}
+                        onClick={() => {
+                          getEvents();
+                          setEventModal(!eventModal);
+                          selectedEvent(item.id);
+                          console.log(currentEventData);
+                        }}
+                      >
+                        <Event key={idx}>{item.title}</Event>
+                      </div>
+                    )
+                )}
             </Day>
           ))}
         </React.Fragment>

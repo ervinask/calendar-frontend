@@ -11,6 +11,10 @@ const GlobalContext = React.createContext({
   setEvent: () => {},
   getEvent: [],
   setGetEvent: () => {},
+  eventModal: [],
+  setEventModal: () => {},
+  currentEventData: [],
+  setCurrentEventData: () => {},
 });
 
 export default GlobalContext;

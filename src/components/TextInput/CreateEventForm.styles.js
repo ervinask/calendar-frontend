@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const CreateEventForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: 19rem;
-  padding: 2rem;
+  padding: 4rem 2rem 2rem;
   border: 1px solid black;
   margin: 2rem auto;
   position: absolute;
@@ -82,5 +83,18 @@ export const DescInput = styled.textarea`
   &:focus {
     outline: none;
     border-bottom: 0.125rem solid #f05151;
+  }
+`;
+
+export const CloseButton = styled(FontAwesomeIcon)`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    color: grey;
   }
 `;

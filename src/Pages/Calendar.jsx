@@ -6,10 +6,11 @@ import Navigation from '../components/Navigation/Navigation';
 import Header from '../components/Header/Header';
 import Body from '../components/Body/Body';
 import GlobalContext from '../Context/GlobalContext';
+import EventModal from '../components/EventModal/EventModal';
 
 const Main = () => {
   const [currentMonth, setCurrentMonth] = useState(getMonth());
-  const { monthIndex } = useContext(GlobalContext);
+  const { monthIndex, eventModal, setEventModal, currentEventData } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,6 +35,15 @@ const Main = () => {
         calendarHeight={`calc(100vh - ${headerHeight})`}
         calendarWidth={`calc(100% - ${navWidth})`}
       />
+      {eventModal && (
+        <EventModal
+          title={currentEventData.title}
+          date={currentEventData.date}
+          startTime={currentEventData.startTime}
+          endTime={currentEventData.endTime}
+          description={currentEventData.description ? currentEventData.description : '-'}
+        />
+      )}
     </Body>
   );
 };

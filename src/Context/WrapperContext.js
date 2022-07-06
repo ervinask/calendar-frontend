@@ -8,6 +8,8 @@ export default function WrapperContext(props) {
   const [loginError, setLoginError] = useState(null);
   const [event, setEvent] = useState(false);
   const [getEvent, setGetEvent] = useState();
+  const [eventModal, setEventModal] = useState(false);
+  const [currentEventData, setCurrentEventData] = useState({});
 
   return (
     <GlobalContext.Provider
@@ -22,6 +24,10 @@ export default function WrapperContext(props) {
         setEvent,
         getEvent,
         setGetEvent,
+        eventModal,
+        setEventModal,
+        currentEventData,
+        setCurrentEventData,
       }}
     >
       {props.children}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as S from './CreateEventForm.styles';
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faPen, faAlignJustify, faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faPen, faAlignJustify, faCalendar, faClose } from '@fortawesome/free-solid-svg-icons';
 import GlobalContext from '../../Context/GlobalContext';
 
 const CreateEventForm = ({}) => {
@@ -37,6 +37,7 @@ const CreateEventForm = ({}) => {
         console.log(getEvent);
       }}
     >
+      <S.CloseButton icon={faClose} onClick={() => setEvent(false)} />
       <S.Con>
         <S.EventLabel htmlFor="title">
           <FontAwesomeIcon icon={faAlignJustify} />
@@ -46,6 +47,7 @@ const CreateEventForm = ({}) => {
           placeholder="Title"
           id="title"
           onChange={(e) => updateEventValues({ ...eventValues, title: e.target.value })}
+          required
         />
       </S.Con>
       <S.Con>
@@ -56,6 +58,7 @@ const CreateEventForm = ({}) => {
           type="date"
           id="date"
           onChange={(e) => updateEventValues({ ...eventValues, date: e.target.value })}
+          required
         />
       </S.Con>
       <S.Con>
@@ -66,12 +69,14 @@ const CreateEventForm = ({}) => {
           type="time"
           id="time"
           onChange={(e) => updateEventValues({ ...eventValues, startTime: e.target.value })}
+          required
         />
         -
         <S.EndTimeInput
           type="time"
           id="end-time"
           onChange={(e) => updateEventValues({ ...eventValues, endTime: e.target.value })}
+          required
         />
       </S.Con>
       <S.Con>
