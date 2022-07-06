@@ -1,8 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Day.styles';
-import GlobalContext from '../../Context/GlobalContext';
-import { useEffect } from 'react';
 
 const Day = ({ children, day, color }) => {
   return (
@@ -14,7 +12,6 @@ const Day = ({ children, day, color }) => {
 };
 
 Day.propTypes = {
-  day: PropTypes.number.isRequired,
   children: PropTypes.node,
 };
 

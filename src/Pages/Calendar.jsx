@@ -3,14 +3,14 @@ import { getMonth } from '../util';
 import { useNavigate } from 'react-router-dom';
 import Calendar from '../components/Calendar/Calendar';
 import Navigation from '../components/Navigation/Navigation';
-import Header from '../components/Header/Header';
+import CalendarHeader from '../components/CalendarHeader/CalendarHeader';
 import Body from '../components/Body/Body';
 import GlobalContext from '../Context/GlobalContext';
 import EventModal from '../components/EventModal/EventModal';
 
 const Main = () => {
   const [currentMonth, setCurrentMonth] = useState(getMonth());
-  const { monthIndex, eventModal, setEventModal, currentEventData } = useContext(GlobalContext);
+  const { monthIndex, eventModal, setEventModal, currentEventData, setCreateEventModal } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,9 +25,11 @@ const Main = () => {
   let navWidth = '4rem';
   let headerHeight = '6rem';
 
+  setCreateEventModal(true);
+
   return (
     <Body>
-      <Header headerHeight={headerHeight}></Header>
+      <CalendarHeader headerHeight={headerHeight}></CalendarHeader>
       <Navigation navWidth={navWidth} navHeight={`calc(100vh - ${headerHeight})`} />
 
       <Calendar

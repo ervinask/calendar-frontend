@@ -20,7 +20,6 @@ const Month = ({ month }) => {
         },
       });
       const data = await res.json();
-      console.log(data);
       setGetEvent(data);
     } catch (err) {
       console.log(err);
@@ -35,7 +34,6 @@ const Month = ({ month }) => {
     return setCurrentEventData(...getEvent.filter((item) => item.id === day));
   };
 
-  console.log(getEvent);
   return (
     <S.Month>
       {month.map((row, index) => (
@@ -57,7 +55,7 @@ const Month = ({ month }) => {
                           getEvents();
                           setEventModal(!eventModal);
                           selectedEvent(item.id);
-                          console.log(currentEventData);
+                          console.log(item.id);
                         }}
                       >
                         <Event key={idx}>{item.title}</Event>
@@ -72,8 +70,6 @@ const Month = ({ month }) => {
   );
 };
 
-Month.propTypes = {
-  month: PropTypes.isRequired,
-};
+Month.propTypes = {};
 
 export default Month;

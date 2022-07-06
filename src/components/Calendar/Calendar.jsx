@@ -11,8 +11,8 @@ const Calendar = ({ month, calendarHeight, calendarWidth }) => {
   return (
     <S.Calendar height={calendarHeight} width={calendarWidth}>
       <Weekdays>
-        {weekDaysNames.map((name) => (
-          <Weekday day={name} />
+        {weekDaysNames.map((name, idx) => (
+          <Weekday day={name} key={idx} />
         ))}
       </Weekdays>
       <Month month={month} events={''} />

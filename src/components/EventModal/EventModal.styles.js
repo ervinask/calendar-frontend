@@ -64,9 +64,7 @@ export const EventDesc = styled.div`
   font-size: 1rem;
   width: 100%;
   overflow: hidden;
-
   text-overflow: ellipsis;
-
   word-wrap: break-word;
 `;
 

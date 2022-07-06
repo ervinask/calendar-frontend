@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const EventCard = styled.div`
-  width: 100%;
+  width: calc(100% / 3 - 0.75rem);
   background-color: #1d222e;
   border-radius: 0.75rem;
-  padding: 1rem 2rem 1.5rem;
+  padding: 2rem 2rem 1.5rem;
   box-sizing: border-box;
+  position: relative;
 `;
 
 export const Title = styled.h2`
@@ -14,6 +16,8 @@ export const Title = styled.h2`
   margin-bottom: 0.5rem;
   padding-bottom: 0.25rem;
   border-bottom: 1px solid white;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const Time = styled.div`
@@ -39,4 +43,15 @@ export const Desc = styled.p`
   margin: 0;
   color: #dcdee4;
   text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+`;
+
+export const Icon = styled(FontAwesomeIcon)`
+  color: #fff;
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+  cursor: pointer;
 `;

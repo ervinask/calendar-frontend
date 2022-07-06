@@ -7,12 +7,14 @@ import SearchBar from '../components/SearchBar/SearchBar';
 import SearchCon from '../components/SearchCon/SearchCon';
 import EventCard from '../components/EventCard/EventCard';
 import EventCardsCon from '../components/EventCardsCon/EventCardsCon';
+import Header from '../components/Header/Header';
 
 const DashBoard = () => {
   const navigate = useNavigate();
-  const { getEvent, setGetEvent } = useContext(GlobalContext);
+  const { getEvent, setGetEvent, setCreateEventModal, setEventModal } = useContext(GlobalContext);
 
   let navWidth = '4rem';
+  let headerHeight = '6rem';
 
   const getEvents = async () => {
     try {
@@ -54,9 +56,27 @@ const DashBoard = () => {
     }
   };
 
+  const deleteEvent = async (id) => {
+    try {
+      const res = await fetch('http://localhost:8080/v1/events/delete/' + id, {
+        method: 'DELETE',
+        headers: {
+          'Content-type': 'application/json',
+          Authorization: 'Bearer ' + localStorage.getItem('token'),
+        },
+      });
+      const data = await res.json();
+      return getEvents();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     getEvents();
   }, []);
+
+  setCreateEventModal(false);
 
   const token = localStorage.getItem('token');
   if (!token) {
@@ -65,7 +85,8 @@ const DashBoard = () => {
 
   return (
     <Body>
-      <Navigation navWidth={navWidth} navHeight={'100vh'} />
+      <Header headerHeight={headerHeight} title={'Dashboard'}></Header>
+      <Navigation navWidth={navWidth} navHeight={`calc(100vh - ${headerHeight})`} />
       <SearchCon>
         <SearchBar
           handleChange={(input) => {
@@ -77,6 +98,8 @@ const DashBoard = () => {
           {getEvent &&
             getEvent.map((item, idx) => (
               <EventCard
+                handleClick={() => console.log(item.id)}
+                handleDelete={() => deleteEvent(item.id)}
                 key={idx}
                 title={item.title}
                 date={item.date}

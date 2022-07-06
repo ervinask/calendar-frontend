@@ -11,7 +11,7 @@ import { faList, faCalendar, faPlus, faGear, faArrowRightFromBracket } from '@fo
 
 const Navigation = ({ navWidth, navHeight }) => {
   const navigate = useNavigate();
-  const { event, setEvent } = useContext(GlobalContext);
+  const { event, setEvent, createEventModal } = useContext(GlobalContext);
 
   const logout = () => {
     localStorage.removeItem('token');
@@ -23,6 +23,7 @@ const Navigation = ({ navWidth, navHeight }) => {
   };
 
   const dashboard = () => {
+    setEvent(false);
     return navigate('/dashboard');
   };
 
@@ -30,15 +31,20 @@ const Navigation = ({ navWidth, navHeight }) => {
     setEvent(!event);
   };
 
+  const settings = () => {
+    setEvent(!event);
+    return navigate('/settings');
+  };
+
   return (
     <S.Navigation width={navWidth} height={navHeight}>
       <NavigationSec background={(props) => props.theme.background.primary}>
-        <NavItem icon={faPlus} handleClick={() => createEvent()} />
+        {createEventModal && <NavItem icon={faPlus} handleClick={() => createEvent()} />}
         <NavItem icon={faCalendar} handleClick={() => calendar()} />
         <NavItem icon={faList} handleClick={() => dashboard()} />
       </NavigationSec>
       <NavigationSec background={(props) => props.theme.background.quarterly}>
-        <NavItem icon={faGear} />
+        <NavItem icon={faGear} handleClick={() => settings()} />
         <NavItem icon={faArrowRightFromBracket} handleClick={() => logout()} />
       </NavigationSec>
       {event && <CreateEventForm />}

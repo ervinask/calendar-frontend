@@ -9,4 +9,6 @@ export const Event = styled.div`
   border-radius: 2rem;
   padding: 0.125rem 0.5rem;
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
