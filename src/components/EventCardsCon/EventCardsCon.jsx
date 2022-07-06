@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './EventCardsCon.styles';
-import GlobalContext from '../../Context/GlobalContext';
-import { useEffect } from 'react';
 
 const EventCardsCon = ({ children }) => {
   return <S.EventCardsCon>{children}</S.EventCardsCon>;
 };
 
-EventCardsCon.propTypes = {};
+EventCardsCon.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default EventCardsCon;

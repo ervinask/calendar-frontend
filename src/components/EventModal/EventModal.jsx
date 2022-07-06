@@ -1,7 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './EventModal.styles';
-import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPen, faAlignJustify, faCalendar, faClose } from '@fortawesome/free-solid-svg-icons';
 import GlobalContext from '../../Context/GlobalContext';
@@ -45,6 +44,14 @@ const EventModal = ({ title, date, startTime, endTime, description }) => {
       </S.EventModal>
     </S.Modal>
   );
+};
+
+EventModal.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  startTime: PropTypes.string.isRequired,
+  endTime: PropTypes.string.isRequired,
+  description: PropTypes.string,
 };
 
 export default EventModal;

@@ -8,10 +8,12 @@ import SearchCon from '../components/SearchCon/SearchCon';
 import EventCard from '../components/EventCard/EventCard';
 import EventCardsCon from '../components/EventCardsCon/EventCardsCon';
 import Header from '../components/Header/Header';
+import Notification from '../components/Notification/Notification';
 
 const DashBoard = () => {
   const navigate = useNavigate();
-  const { getEvent, setGetEvent, setCreateEventModal, setEventModal } = useContext(GlobalContext);
+  const { getEvent, setGetEvent, setCreateEventModal } = useContext(GlobalContext);
+  const [nodata, setNodata] = useState();
 
   const getEvents = async () => {
     try {
@@ -23,6 +25,12 @@ const DashBoard = () => {
         },
       });
       const data = await res.json();
+
+      if (data.length === 0) {
+        console.log(data);
+        setNodata('You do not have any events created');
+      }
+
       return setGetEvent(data);
     } catch (err) {
       console.log(err);
@@ -91,6 +99,7 @@ const DashBoard = () => {
           }}
         />
         <EventCardsCon>
+          {nodata && <Notification> {nodata}</Notification>}
           {getEvent &&
             getEvent.map((item, idx) => (
               <EventCard

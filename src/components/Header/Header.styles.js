@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
   align-items: center;
+  background: #fff;
   border-bottom: 0.125rem #f05151 solid;
   box-sizing: border-box;
   display: flex;
@@ -9,10 +10,9 @@ export const Header = styled.header`
   height: 6rem;
   margin: 0;
   padding: 0 2rem;
-  width: 100%;
   position: fixed;
+  width: 100%;
   z-index: 100;
-  background: #fff;
 `;
 
 export const Title = styled.h1`

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './NavItem.styles';
 
-const NavItem = ({ handleClick, handleBlur, icon }) => {
+const NavItem = ({ handleClick, icon }) => {
   return (
     <S.NavItem onClick={handleClick}>
       <S.Icon icon={icon} />
@@ -10,6 +10,9 @@ const NavItem = ({ handleClick, handleBlur, icon }) => {
   );
 };
 
-NavItem.propTypes = {};
+NavItem.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  icon: PropTypes.object.isRequired,
+};
 
 export default NavItem;

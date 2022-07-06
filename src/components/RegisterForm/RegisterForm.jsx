@@ -55,7 +55,7 @@ const RegisterForm = ({ handleSubmit, title }) => {
 };
 
 RegisterForm.propTypes = {
-  handleSubmit: PropTypes.func,
+  handleSubmit: PropTypes.func.isRequired,
   title: PropTypes.string,
 };
 

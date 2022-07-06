@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './SearchBar.styles';
-
 import PropTypes from 'prop-types';
+
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBar = ({ handleChange, value }) => {
@@ -13,6 +13,9 @@ const SearchBar = ({ handleChange, value }) => {
   );
 };
 
-SearchBar.propTypes = {};
+SearchBar.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  value: PropTypes.string,
+};
 
 export default SearchBar;

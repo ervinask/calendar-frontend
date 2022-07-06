@@ -1,18 +1,14 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import * as S from './CalendarHeader.styles';
 import GlobalContext from '../../Context/GlobalContext';
 import dayjs from 'dayjs';
 
-const CalendarHeader = ({}) => {
+const CalendarHeader = () => {
   const { monthIndex, setMonthIndex } = useContext(GlobalContext);
 
   const handlePrevMonth = () => setMonthIndex(monthIndex - 1);
 
-  const handleNextMonth = () => {
-    setMonthIndex(monthIndex + 1);
-  };
-
+  const handleNextMonth = () => setMonthIndex(monthIndex + 1);
   return (
     <S.CalendarHeader>
       <S.Title>{dayjs(new Date(dayjs().year(), monthIndex)).format('MMMM YYYY')}</S.Title>
@@ -21,7 +17,5 @@ const CalendarHeader = ({}) => {
     </S.CalendarHeader>
   );
 };
-
-CalendarHeader.propTypes = {};
 
 export default CalendarHeader;

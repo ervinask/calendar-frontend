@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Month.styles';
 import dayjs from 'dayjs';
+import GlobalContext from '../../Context/GlobalContext';
 import Day from '../Day/Day';
 import Event from '../Event/Event';
-import GlobalContext from '../../Context/GlobalContext';
 
 const Month = ({ month }) => {
-  const { getEvent, setGetEvent, eventModal, setEventModal, setCurrentEventData, currentEventData, monthIndex } =
+  const { getEvent, setGetEvent, eventModal, setEventModal, setCurrentEventData, monthIndex } =
     useContext(GlobalContext);
 
   const getEvents = async () => {
@@ -74,6 +74,8 @@ const Month = ({ month }) => {
   );
 };
 
-Month.propTypes = {};
+Month.propTypes = {
+  month: PropTypes.array.isRequired,
+};
 
 export default Month;

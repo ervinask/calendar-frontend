@@ -1,7 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from '../../theme';
-import dayjs from 'dayjs';
 import EventCardsCon from './EventCardsCon';
 import EventCard from '../EventCard/EventCard';
 

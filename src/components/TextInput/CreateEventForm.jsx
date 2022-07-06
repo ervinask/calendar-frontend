@@ -1,14 +1,13 @@
 import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
 import * as S from './CreateEventForm.styles';
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPen, faAlignJustify, faCalendar, faClose } from '@fortawesome/free-solid-svg-icons';
 import GlobalContext from '../../Context/GlobalContext';
 
-const CreateEventForm = ({}) => {
+const CreateEventForm = () => {
   const [eventValues, updateEventValues] = useState();
-  const { event, setEvent, getEvent, setGetEvent } = useContext(GlobalContext);
+  const { setEvent, getEvent, setGetEvent } = useContext(GlobalContext);
 
   const sendEventInfo = async () => {
     try {

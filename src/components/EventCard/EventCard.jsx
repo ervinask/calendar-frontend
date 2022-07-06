@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './EventCard.styles';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +19,14 @@ const EventCard = ({ title, date, startTime, endTime, description, handleClick, 
   );
 };
 
-EventCard.propTypes = {};
+EventCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  startTime: PropTypes.string.isRequired,
+  endTime: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+};
 
 export default EventCard;

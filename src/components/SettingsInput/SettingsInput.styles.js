@@ -1,32 +1,31 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const InputCon = styled.div`
-  display: flex;
-  width: 100%;
-  font-family: sans-serif;
-  gap: 0.25rem;
   align-items: center;
   border-bottom: 1px solid black;
+  display: flex;
+  font-family: sans-serif;
+  gap: 0.25rem;
   margin-bottom: 1rem;
   position: relative;
+  width: 100%;
 `;
 
 export const Label = styled.label`
-  width: 10rem;
-  position: absolute;
   left: 1rem;
+  position: absolute;
+  width: 10rem;
 `;
 
 export const Input = styled.input`
   background: transparent;
-  padding: 1rem 1rem 1rem 9rem;
   border: none;
-  width: 100%;
   font-weight: bold;
+  padding: 1rem 1rem 1rem 9rem;
+  width: 100%;
 
   &:focus {
-    outline: none;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    outline: none;
   }
 `;

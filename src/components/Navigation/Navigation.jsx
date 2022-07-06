@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import * as S from './Navigation.styles';
 import { useNavigate } from 'react-router-dom';
 import GlobalContext from '../../Context/GlobalContext';
@@ -9,9 +8,9 @@ import CreateEventForm from '../TextInput/CreateEventForm';
 
 import { faList, faCalendar, faPlus, faGear, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
-const Navigation = ({}) => {
-  const navigate = useNavigate();
+const Navigation = () => {
   const { event, setEvent, createEventModal } = useContext(GlobalContext);
+  const navigate = useNavigate();
 
   const logout = () => {
     localStorage.removeItem('token');

@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const EventCard = styled.div`
-  width: calc(100% / 3 - 0.75rem);
   background-color: #1d222e;
   border-radius: 0.75rem;
-  padding: 2rem 2rem 1.5rem;
   box-sizing: border-box;
+  padding: 2rem 2rem 1.5rem;
   position: relative;
+  width: calc(100% / 3 - 0.75rem);
 
   @media (max-width: 768px) {
     width: 100%;
@@ -15,47 +15,47 @@ export const EventCard = styled.div`
 `;
 
 export const Title = styled.h2`
-  margin: 0;
+  border-bottom: 1px solid white;
   color: #dcdee4;
   margin-bottom: 0.5rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid white;
+  margin: 0;
   overflow: hidden;
+  padding-bottom: 0.25rem;
   text-overflow: ellipsis;
 `;
 
 export const Time = styled.div`
+  align-items: flex-end;
   display: flex;
   gap: 1rem;
-  align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 0.5rem;
 `;
 
 export const Date = styled.p`
-  margin: 0;
   color: #fff;
   font-size: 1.25rem;
+  margin: 0;
 `;
 
 export const ExactTime = styled.p`
-  margin: 0;
   color: #dcdee4;
+  margin: 0;
 `;
 
 export const Desc = styled.p`
-  margin: 0;
   color: #dcdee4;
-  text-align: justify;
+  margin: 0;
   overflow: hidden;
+  text-align: justify;
   text-overflow: ellipsis;
   word-wrap: break-word;
 `;
 
 export const Icon = styled(FontAwesomeIcon)`
   color: #fff;
+  cursor: pointer;
   position: absolute;
   right: 2rem;
   top: 1rem;
-  cursor: pointer;
 `;

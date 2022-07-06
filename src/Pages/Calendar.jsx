@@ -10,7 +10,7 @@ import EventModal from '../components/EventModal/EventModal';
 
 const Main = () => {
   const [currentMonth, setCurrentMonth] = useState(getMonth());
-  const { monthIndex, eventModal, setEventModal, currentEventData, setCreateEventModal } = useContext(GlobalContext);
+  const { monthIndex, eventModal, currentEventData, setCreateEventModal } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   useEffect(() => {

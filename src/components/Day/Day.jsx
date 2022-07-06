@@ -13,6 +13,8 @@ const Day = ({ children, day, color }) => {
 
 Day.propTypes = {
   children: PropTypes.node,
+  day: PropTypes.object.isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export default Day;

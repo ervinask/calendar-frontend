@@ -1,16 +1,14 @@
-import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import * as S from './ChangePassForm.styles';
-import { Link } from 'react-router-dom';
-import GlobalContext from '../../Context/GlobalContext';
+import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import SettingsInput from '../SettingsInput/SettingsInput';
 import Notification from '../Notification/Notification';
 
-const ChangePassForm = ({}) => {
+const ChangePassForm = () => {
   const [changePassValues, updateChangePassValues] = useState();
   const [changePassError, setChangePassError] = useState();
-  const [succesMessage, successMessage] = useState(false);
+  const navigate = useNavigate();
 
   const changePass = async (passData) => {
     try {
@@ -34,7 +32,8 @@ const ChangePassForm = ({}) => {
       }
 
       setChangePassError(null);
-      return setChangePassError('good');
+      localStorage.removeItem('token');
+      return navigate('/login');
     } catch (err) {
       console.log(err);
     }
