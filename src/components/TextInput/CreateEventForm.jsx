@@ -4,10 +4,11 @@ import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPen, faAlignJustify, faCalendar, faClose } from '@fortawesome/free-solid-svg-icons';
 import GlobalContext from '../../Context/GlobalContext';
-import dayjs from 'dayjs';
+import Notification from '../Notification/Notification';
 
 const CreateEventForm = () => {
   const [eventValues, updateEventValues] = useState();
+  const [error, setError] = useState();
   const { setEvent, getEvent, setGetEvent } = useContext(GlobalContext);
 
   const sendEventInfo = async () => {
@@ -20,8 +21,14 @@ const CreateEventForm = () => {
         },
         body: JSON.stringify(eventValues),
       });
+
       const data = await res.json();
-      console.log(data);
+
+      if (data.err) {
+        return setError(data.err);
+      }
+
+      return setEvent(false);
     } catch (err) {
       console.log(err);
     }
@@ -32,7 +39,7 @@ const CreateEventForm = () => {
       onSubmit={(e) => {
         e.preventDefault();
         sendEventInfo();
-        setEvent(false);
+
         setGetEvent([...getEvent, eventValues]);
         console.log(getEvent);
       }}
@@ -89,6 +96,7 @@ const CreateEventForm = () => {
           onChange={(e) => updateEventValues({ ...eventValues, description: e.target.value })}
         />
       </S.Con>
+      {error && <Notification> {error}</Notification>}
       <Button type="submit">Save</Button>
     </S.CreateEventForm>
   );
