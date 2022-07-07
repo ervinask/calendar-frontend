@@ -19,7 +19,7 @@ const Main = () => {
 
   const token = localStorage.getItem('token');
   if (!token) {
-    return navigate('/login');
+    return navigate('/');
   }
 
   setCreateEventModal(true);

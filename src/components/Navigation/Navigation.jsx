@@ -14,7 +14,7 @@ const Navigation = () => {
 
   const logout = () => {
     localStorage.removeItem('token');
-    return navigate('/login');
+    return navigate('/');
   };
 
   const calendar = () => {

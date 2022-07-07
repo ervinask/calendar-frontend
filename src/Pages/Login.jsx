@@ -4,13 +4,15 @@ import LoginForm from '../components/LoginForm/LoginForm';
 import FormSection from '../components/FormSection/FormSection';
 import GlobalContext from '../Context/GlobalContext';
 
+const url = process.env.REACT_APP_BACK_URL;
+
 const Login = () => {
   const navigate = useNavigate();
   const { setLoginError } = useContext(GlobalContext);
 
   const login = async (inputData) => {
     try {
-      const res = await fetch('http://localhost:8080/v1/users/login', {
+      const res = await fetch(`${url}v1/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

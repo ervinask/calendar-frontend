@@ -10,4 +10,12 @@ export const TwoColumnCon = styled.div`
   padding: 4rem;
   width: calc(100% - 4rem);
   gap: 8rem;
+
+  @media (max-width: 900px) {
+    padding: 2rem;
+    gap: 4rem;
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;

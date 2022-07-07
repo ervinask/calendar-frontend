@@ -4,13 +4,15 @@ import RegisterForm from '../components/RegisterForm/RegisterForm';
 import FormSection from '../components/FormSection/FormSection';
 import GlobalContext from '../Context/GlobalContext';
 
+const url = process.env.REACT_APP_BACK_URL;
+
 const Register = () => {
   const navigate = useNavigate();
   const { setRegisterError } = useContext(GlobalContext);
 
   const register = async (inputData) => {
     try {
-      const res = await fetch('http://localhost:8080/v1/users/register', {
+      const res = await fetch(`${url}v1/users/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,7 +31,7 @@ const Register = () => {
       }
 
       setRegisterError(null);
-      return navigate('/login');
+      return navigate('/');
     } catch (err) {
       console.log(err);
     }

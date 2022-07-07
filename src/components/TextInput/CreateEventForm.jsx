@@ -6,6 +6,8 @@ import { faClock, faPen, faAlignJustify, faCalendar, faClose } from '@fortawesom
 import GlobalContext from '../../Context/GlobalContext';
 import Notification from '../Notification/Notification';
 
+const url = process.env.REACT_APP_BACK_URL;
+
 const CreateEventForm = () => {
   const [eventValues, updateEventValues] = useState();
   const [error, setError] = useState();
@@ -13,7 +15,7 @@ const CreateEventForm = () => {
 
   const sendEventInfo = async () => {
     try {
-      const res = await fetch(`http://localhost:8080/v1/events/`, {
+      const res = await fetch(`${url}v1/events/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,6 +30,7 @@ const CreateEventForm = () => {
         return setError(data.err);
       }
 
+      setGetEvent([...getEvent, eventValues]);
       return setEvent(false);
     } catch (err) {
       console.log(err);
@@ -39,9 +42,6 @@ const CreateEventForm = () => {
       onSubmit={(e) => {
         e.preventDefault();
         sendEventInfo();
-
-        setGetEvent([...getEvent, eventValues]);
-        console.log(getEvent);
       }}
     >
       <S.CloseButton icon={faClose} onClick={() => setEvent(false)} />

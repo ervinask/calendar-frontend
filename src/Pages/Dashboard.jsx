@@ -11,6 +11,8 @@ import Header from '../components/Header/Header';
 import Notification from '../components/Notification/Notification';
 import dayjs from 'dayjs';
 
+const url = process.env.REACT_APP_BACK_URL;
+
 const DashBoard = () => {
   const navigate = useNavigate();
   const { getEvent, setGetEvent, setCreateEventModal } = useContext(GlobalContext);
@@ -18,7 +20,7 @@ const DashBoard = () => {
 
   const getEvents = async () => {
     try {
-      const res = await fetch('http://localhost:8080/v1/events/', {
+      const res = await fetch(`${url}v1/events/`, {
         method: 'GET',
         headers: {
           'Content-type': 'application/json',
@@ -28,10 +30,12 @@ const DashBoard = () => {
       const data = await res.json();
 
       if (data.length === 0) {
-        console.log(data);
         setNodata('You do not have any events created');
       }
 
+      data.sort(function (a, b) {
+        return dayjs(a.date).unix() - dayjs(b.date).unix();
+      });
       return setGetEvent(data);
     } catch (err) {
       console.log(err);
@@ -40,7 +44,7 @@ const DashBoard = () => {
 
   const searchEvents = async (input) => {
     try {
-      const res = await fetch('http://localhost:8080/v1/events/search/', {
+      const res = await fetch(`${url}v1/events/search/`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -53,8 +57,6 @@ const DashBoard = () => {
       if (data.err) {
         return setGetEvent('');
       }
-
-      console.log(data);
       return setGetEvent(data);
     } catch (err) {
       console.log(err);
@@ -63,7 +65,7 @@ const DashBoard = () => {
 
   const deleteEvent = async (id) => {
     try {
-      const res = await fetch('http://localhost:8080/v1/events/delete/' + id, {
+      const res = await fetch(`${url}v1/events/delete/` + id, {
         method: 'DELETE',
         headers: {
           'Content-type': 'application/json',
@@ -77,16 +79,15 @@ const DashBoard = () => {
     }
   };
 
+  const token = localStorage.getItem('token');
   useEffect(() => {
+    if (!token) {
+      return navigate('/');
+    }
     getEvents();
   }, []);
 
   setCreateEventModal(false);
-
-  const token = localStorage.getItem('token');
-  if (!token) {
-    return navigate('/login');
-  }
 
   return (
     <Body>
@@ -96,7 +97,6 @@ const DashBoard = () => {
         <SearchBar
           handleChange={(input) => {
             searchEvents({ input: input });
-            console.log(getEvent);
           }}
         />
         <EventCardsCon>
@@ -104,7 +104,6 @@ const DashBoard = () => {
           {getEvent &&
             getEvent.map((item, idx) => (
               <EventCard
-                handleClick={() => console.log(item.id)}
                 handleDelete={() => deleteEvent(item.id)}
                 key={idx}
                 title={item.title}

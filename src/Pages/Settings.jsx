@@ -7,16 +7,20 @@ import Header from '../components/Header/Header';
 import ChangePassForm from '../components/ChangePassForm/ChangePassForm';
 import TwoColumnCon from '../components/TwoColumnCon/TwoColumnCon';
 import Statistics from '../components/Statistics/Statistics';
+import { useEffect } from 'react';
 
 const Settings = () => {
   const navigate = useNavigate();
   const { setCreateEventModal } = useContext(GlobalContext);
-  const token = localStorage.getItem('token');
   setCreateEventModal(false);
 
-  if (!token) {
-    return navigate('/login');
-  }
+  const token = localStorage.getItem('token');
+
+  useEffect(() => {
+    if (!token) {
+      return navigate('/');
+    }
+  });
 
   return (
     <Body>

@@ -6,13 +6,15 @@ import GlobalContext from '../../Context/GlobalContext';
 import Day from '../Day/Day';
 import Event from '../Event/Event';
 
+const url = process.env.REACT_APP_BACK_URL;
+
 const Month = ({ month }) => {
   const { getEvent, setGetEvent, eventModal, setEventModal, setCurrentEventData, monthIndex } =
     useContext(GlobalContext);
 
   const getEvents = async () => {
     try {
-      const res = await fetch('http://localhost:8080/v1/events/', {
+      const res = await fetch(`${url}v1/events/`, {
         method: 'GET',
         headers: {
           'Content-type': 'application/json',

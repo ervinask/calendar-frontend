@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import * as S from './EventCard.styles';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-const EventCard = ({ title, date, startTime, endTime, description, handleClick, handleDelete }) => {
+const EventCard = ({ title, date, startTime, endTime, description, handleDelete }) => {
   return (
-    <S.EventCard onClick={handleClick}>
+    <S.EventCard>
       <S.Icon icon={faTrashCan} onClick={handleDelete} />
       <S.Title>{title}</S.Title>
       <S.Time>
@@ -24,8 +24,7 @@ EventCard.propTypes = {
   date: PropTypes.string.isRequired,
   startTime: PropTypes.string.isRequired,
   endTime: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  description: PropTypes.string,
   handleDelete: PropTypes.func.isRequired,
 };
 

@@ -5,6 +5,8 @@ import Button from '../Button/Button';
 import SettingsInput from '../SettingsInput/SettingsInput';
 import Notification from '../Notification/Notification';
 
+const url = process.env.REACT_APP_BACK_URL;
+
 const ChangePassForm = () => {
   const [changePassValues, updateChangePassValues] = useState();
   const [changePassError, setChangePassError] = useState();
@@ -12,7 +14,7 @@ const ChangePassForm = () => {
 
   const changePass = async (passData) => {
     try {
-      const res = await fetch(`http://localhost:8080/v1/users/change-password`, {
+      const res = await fetch(`${url}v1/users/change-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +35,7 @@ const ChangePassForm = () => {
 
       setChangePassError(null);
       localStorage.removeItem('token');
-      return navigate('/login');
+      return navigate('/');
     } catch (err) {
       console.log(err);
     }

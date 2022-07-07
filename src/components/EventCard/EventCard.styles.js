@@ -9,6 +9,10 @@ export const EventCard = styled.div`
   position: relative;
   width: calc(100% / 3 - 0.75rem);
 
+  @media (max-width: 1200px) {
+    width: calc(100% / 2 - 0.5rem);
+  }
+
   @media (max-width: 768px) {
     width: 100%;
   }

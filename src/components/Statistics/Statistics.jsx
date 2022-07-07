@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import * as S from './Statistics.styles';
 import dayjs from 'dayjs';
 
+const url = process.env.REACT_APP_BACK_URL;
+
 const Statistics = () => {
   const [stats, setStats] = useState();
 
   const getStats = async () => {
     try {
-      const res = await fetch('http://localhost:8080/v1/events/', {
+      const res = await fetch(`${url}v1/events/`, {
         method: 'GET',
         headers: {
           'Content-type': 'application/json',
