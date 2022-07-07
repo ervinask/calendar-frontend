@@ -5,7 +5,8 @@ import Body from '../components/Body/Body';
 import GlobalContext from '../Context/GlobalContext';
 import Header from '../components/Header/Header';
 import ChangePassForm from '../components/ChangePassForm/ChangePassForm';
-import { TwoColumnCon } from '../components/TwoColumnCon/TwoColumnCon.styles';
+import TwoColumnCon from '../components/TwoColumnCon/TwoColumnCon';
+import Statistics from '../components/Statistics/Statistics';
 
 const Settings = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const Settings = () => {
       <Navigation />
       <TwoColumnCon>
         <ChangePassForm />
+        <Statistics />
       </TwoColumnCon>
     </Body>
   );

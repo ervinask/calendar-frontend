@@ -14,14 +14,14 @@ export const InputCon = styled.div`
 export const Label = styled.label`
   left: 1rem;
   position: absolute;
-  width: 10rem;
+  width: 13rem;
 `;
 
 export const Input = styled.input`
   background: transparent;
   border: none;
   font-weight: bold;
-  padding: 1rem 1rem 1rem 9rem;
+  padding: 1rem 1rem 1rem 13rem;
   width: 100%;
 
   &:focus {

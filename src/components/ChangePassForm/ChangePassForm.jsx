@@ -47,6 +47,7 @@ const ChangePassForm = () => {
           changePass(changePassValues);
         }}
       >
+        <S.Title>Change your password</S.Title>
         <SettingsInput
           type="password"
           label="Old Password:"

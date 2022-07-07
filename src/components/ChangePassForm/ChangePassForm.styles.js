@@ -19,3 +19,9 @@ export const Register = styled.div`
   text-decoration: none;
   width: 100%;
 `;
+
+export const Title = styled.h1`
+  margin: 0;
+  text-align: center;
+  font-family: sans-serif;
+`;

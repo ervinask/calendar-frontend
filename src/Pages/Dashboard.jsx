@@ -9,6 +9,7 @@ import EventCard from '../components/EventCard/EventCard';
 import EventCardsCon from '../components/EventCardsCon/EventCardsCon';
 import Header from '../components/Header/Header';
 import Notification from '../components/Notification/Notification';
+import dayjs from 'dayjs';
 
 const DashBoard = () => {
   const navigate = useNavigate();

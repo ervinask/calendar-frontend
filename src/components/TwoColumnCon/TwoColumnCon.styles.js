@@ -7,6 +7,7 @@ export const TwoColumnCon = styled.div`
   grid-template-columns: 1fr 1fr;
   height: calc(100vh - 6rem);
   margin: 6rem 0 0 4rem;
-  padding: 2rem;
+  padding: 4rem;
   width: calc(100% - 4rem);
+  gap: 8rem;
 `;
