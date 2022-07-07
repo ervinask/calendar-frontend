@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPen, faAlignJustify, faCalendar, faClose } from '@fortawesome/free-solid-svg-icons';
 import GlobalContext from '../../Context/GlobalContext';
+import dayjs from 'dayjs';
 
 const CreateEventForm = () => {
   const [eventValues, updateEventValues] = useState();
