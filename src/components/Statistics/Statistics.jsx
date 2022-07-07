@@ -30,7 +30,6 @@ const Statistics = () => {
     }
   };
 
-  console.log(stats);
   useEffect(() => {
     getStats();
   }, []);
